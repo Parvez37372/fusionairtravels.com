@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /config/
+Disallow: /includes/
+Disallow: /tmp/
+Disallow: /private/
+Allow: /
+
+Sitemap: https://helpforyou.online/sitemap.xml

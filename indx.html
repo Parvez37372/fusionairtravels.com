@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fusion Air Travel</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background-color: #f4f4f4;
+        }
+        .navbar {
+            background-color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+        .navbar img {
+            height: 60px;
+            width: 200px;
+        }
+        .menu-icon {
+            font-size: 30px;
+            cursor: pointer;
+            display: none;
+        }
+        .nav-links {
+            display: flex;
+        }
+        .nav-links a {
+            color: black;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 18px;
+        }
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: -250px;
+            width: 250px;
+            height: 100%;
+            background-color: white;
+            padding-top: 50px;
+            transition: 0.3s;
+        }
+        .sidebar a {
+            display: block;
+            color: black;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 20px;
+        }
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+            background: url('image/air.webp') no-repeat center center/cover;
+            color: black;
+            height: 100vh;
+        }
+        .hero h1 {
+            font-size: 50px;
+            margin-top: 220px;
+        }
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        .btn {
+            background-color: #ffcc00;
+            color: black;
+            padding: 15px 30px;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 5px;
+        }
+        .btn:hover {
+            background-color: #e6b800;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: #222;
+            color: white;
+            margin-top: 30px;
+        }
+        @media screen and (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .menu-icon {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <img src="image/logo.png" alt="Logo">
+        <div class="menu-icon" onclick="openNav()">&#9776;</div>
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">Flights</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </div>
+    </div>
+    <div id="sidebar" class="sidebar">
+        <a href="javascript:void(0)" class="close-btn" onclick="closeNav()">&times;</a>
+        <a href="#">Home</a>
+        <a href="#">Flights</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </div>
+    <div class="hero">
+        <h1>Welcome to Fusion Air Travels</h1>
+        <p>Your trusted partner in air travel services.</p>
+        <button class="btn" onclick="showAlert()">Book a Flight</button>
+    </div>
+    <div class="footer">
+        &copy; 2025 Fusion Air Travels | All Rights Reserved
+    </div>
+    <script>
+        function openNav() {
+            document.getElementById("sidebar").style.left = "0";
+        }
+        function closeNav() {
+            document.getElementById("sidebar").style.left = "-250px";
+        }
+        function showAlert() {
+            Swal.fire({
+                title: "Website Under Maintenance",
+                text: "We are currently working on improvements. Please check back later!",
+                icon: "info",
+                confirmButtonText: "OK"
+            });
+        }
+    </script>
+</body>
+</html>
